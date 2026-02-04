@@ -11,9 +11,9 @@
     "lint": "eslint src/"
   },
   "dependencies": {
-    "@almadar/server": "workspace:*",
-    "@almadar/evaluator": "workspace:*",
-    "@almadar/core": "workspace:*",
+    "@almadar/server": "^1.0.0",
+    "@almadar/evaluator": "^1.0.0",
+    "@almadar/core": "^1.0.0",
     "express": "^4.21.0"
   },
   "devDependencies": {

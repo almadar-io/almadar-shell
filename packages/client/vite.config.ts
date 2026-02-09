@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => {
 
     resolve: {
       alias: {
+        '@design-system': path.resolve(__dirname, '../../../design-system'),
         '@': path.resolve(__dirname, './src'),
         '@generated': path.resolve(__dirname, './src/generated'),
         '@pages': path.resolve(__dirname, './src/pages'),

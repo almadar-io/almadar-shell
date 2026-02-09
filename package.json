@@ -1,6 +1,6 @@
 {
   "name": "@almadar/shell",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "private": true,
   "packageManager": "pnpm@9.15.9",
   "description": "Minimal full-stack shell template for Almadar applications",

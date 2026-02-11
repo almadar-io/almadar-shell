@@ -8,6 +8,7 @@ import {
   logger,
   errorHandler,
   notFoundHandler,
+  debugEventsRouter,
 } from '@almadar/server';
 import { registerRoutes } from './routes.js';
 
@@ -21,6 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok' });
 });
+
+// Debug event bus endpoints (dev-only, no-op in production)
+app.use('/api/debug', debugEventsRouter());
 
 // Register generated routes
 registerRoutes(app);

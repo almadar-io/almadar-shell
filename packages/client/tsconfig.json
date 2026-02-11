@@ -20,6 +20,8 @@
       "@/*": ["./src/*"],
       "@generated/*": ["./src/generated/*"],
       "@pages/*": ["./src/pages/*"],
+      "@app/shared": ["../shared/src/index.ts"],
+      "@app/shared/*": ["../shared/src/*"],
       "@shared/*": ["../shared/src/*"],
       "@design-system": ["../../../design-system/index.ts"],
       "@design-system/*": ["../../../design-system/*"]

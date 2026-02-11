@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, './src'),
         '@generated': path.resolve(__dirname, './src/generated'),
         '@pages': path.resolve(__dirname, './src/pages'),
+        '@app/shared': path.resolve(__dirname, '../shared/src'),
         '@shared': path.resolve(__dirname, '../shared/src'),
       },
     },

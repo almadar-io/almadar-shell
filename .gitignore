@@ -5,6 +5,14 @@
 node_modules/
 *.log
 
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
 # Editor
 .vscode/
 .idea/
@@ -18,3 +26,6 @@ Thumbs.db
 # Test coverage
 coverage/
 .nyc_output/
+
+# Lock files (regenerated on install)
+package-lock.json

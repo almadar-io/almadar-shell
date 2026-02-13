@@ -2,8 +2,12 @@
  * Server Entry Point
  */
 
+import { initializeFirebase, env, logger } from '@almadar/server';
+
+// Initialize Firebase before anything else uses it
+initializeFirebase();
+
 import { app } from './app.js';
-import { env, logger } from '@almadar/server';
 
 const PORT = env.PORT || 3030;
 

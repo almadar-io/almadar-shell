@@ -8,12 +8,13 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "npx concurrently -n client,server -c blue,green \"npm run dev -w packages/client\" \"npm run dev -w packages/server\"",
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "lint": "turbo run lint"
   },
   "devDependencies": {
+    "concurrently": "^8.2.0",
     "turbo": "^2.0.0"
   }
 }

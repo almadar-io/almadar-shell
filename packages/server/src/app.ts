@@ -3,6 +3,7 @@
  */
 
 import express from 'express';
+import cors from 'cors';
 import {
   env,
   logger,
@@ -15,6 +16,7 @@ import { registerRoutes } from './routes.js';
 export const app = express();
 
 // Middleware
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

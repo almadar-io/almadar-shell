@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User } from 'firebase/auth';
-import { auth } from '../../config/firebase';
+import { auth, initializeFirebase } from '../../config/firebase';
 import { authService } from './authService';
 import { AuthContextType } from './types';
 
@@ -24,11 +24,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((firebaseUser) => {
-      setUser(firebaseUser);
-      setLoading(false);
+    let unsubscribe: (() => void) | undefined;
+
+    initializeFirebase().then(() => {
+      unsubscribe = auth.onAuthStateChanged((firebaseUser) => {
+        setUser(firebaseUser);
+        setLoading(false);
+      });
     });
-    return () => unsubscribe();
+
+    return () => unsubscribe?.();
   }, []);
 
   const clearError = () => setError(null);

@@ -28,7 +28,9 @@
     "remark-math": "^6.0.0",
     "rehype-katex": "^7.0.0",
     "rehype-raw": "^7.0.0",
-    "react-force-graph-2d": "^1.25.0"
+    "react-force-graph-2d": "^1.25.0",
+    "@monaco-editor/react": "^4.6.0",
+    "monaco-editor": "^0.52.0"
   },
   "devDependencies": {
     "@testing-library/react": "^16.1.0",

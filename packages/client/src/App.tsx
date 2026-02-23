@@ -17,6 +17,7 @@ import {
   ThemeProvider,
   EventBusProvider,
   UISlotProvider,
+  VerificationProvider,
 } from '@almadar/ui/providers';
 import { NavigationProvider } from '@almadar/ui/renderer';
 
@@ -40,22 +41,24 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <EventBusProvider>
-          <UISlotProvider>
-            <NavigationProvider
-              schema={schema}
-              updateUrl={true}
-              onNavigate={(pageName, path, payload) => {
-                console.log('[App] Navigation:', { pageName, path, payload });
-              }}
-            >
-              <BrowserRouter>
-                <Routes>
-                  {/* {{GENERATED_ROUTES}} */}
-                  <Route path="/" element={<div>Welcome to Almadar</div>} />
-                </Routes>
-              </BrowserRouter>
-            </NavigationProvider>
-          </UISlotProvider>
+          <VerificationProvider>
+            <UISlotProvider>
+              <NavigationProvider
+                schema={schema}
+                updateUrl={true}
+                onNavigate={(pageName, path, payload) => {
+                  console.log('[App] Navigation:', { pageName, path, payload });
+                }}
+              >
+                <BrowserRouter>
+                  <Routes>
+                    {/* {{GENERATED_ROUTES}} */}
+                    <Route path="/" element={<div>Welcome to Almadar</div>} />
+                  </Routes>
+                </BrowserRouter>
+              </NavigationProvider>
+            </UISlotProvider>
+          </VerificationProvider>
         </EventBusProvider>
       </ThemeProvider>
     </QueryClientProvider>

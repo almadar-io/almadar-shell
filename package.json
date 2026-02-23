@@ -1,6 +1,6 @@
 {
   "name": "@almadar/shell",
-  "version": "1.0.14",
+  "version": "2.0.0",
   "private": true,
   "description": "Minimal full-stack shell template for Almadar applications",
   "workspaces": [
@@ -15,5 +15,15 @@
   "devDependencies": {
     "concurrently": "^8.2.0",
     "turbo": "^2.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/almadar-io/almadar-shell.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

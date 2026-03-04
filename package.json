@@ -7,7 +7,8 @@
     "dev": "npx concurrently -n client,server -c blue,green \"pnpm --filter @almadar/shell-client dev\" \"pnpm --filter @almadar/shell-server dev\"",
     "build": "pnpm run -r build",
     "typecheck": "turbo run typecheck",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {
     "concurrently": "^8.2.0",

@@ -9,10 +9,10 @@ importers:
   .:
     devDependencies:
       concurrently:
-        specifier: ^8.2.2
+        specifier: ^8.2.0
         version: 8.2.2
       turbo:
-        specifier: ^2.8.13
+        specifier: ^2.0.0
         version: 2.8.13
 
 packages:

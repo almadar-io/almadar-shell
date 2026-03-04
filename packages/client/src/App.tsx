@@ -19,12 +19,17 @@ import {
   VerificationProvider,
 } from '@almadar/ui/providers';
 import { NavigationProvider } from '@almadar/ui/renderer';
+import { I18nProvider, createTranslate } from '@almadar/ui/hooks';
 
+// {{GENERATED_I18N_IMPORT}}
 // {{GENERATED_IMPORTS}}
 
 // Generated schema import (compiler fills this in)
 // {{GENERATED_SCHEMA_IMPORT}}
 const schema = { name: 'app', orbitals: [] }; // Placeholder - replaced by compiler
+
+// {{GENERATED_I18N_VALUE}}
+const i18nValue = { locale: 'en', direction: 'ltr' as const, t: createTranslate({}) };
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,6 +42,7 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
+    <I18nProvider value={i18nValue}>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <EventBusProvider>
@@ -61,6 +67,7 @@ function App() {
         </EventBusProvider>
       </ThemeProvider>
     </QueryClientProvider>
+    </I18nProvider>
   );
 }
 

@@ -13,10 +13,9 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ThemeProvider, UISlotProvider } from '@almadar/ui/context';
 import {
-  ThemeProvider,
   EventBusProvider,
-  UISlotProvider,
   VerificationProvider,
 } from '@almadar/ui/providers';
 import { NavigationProvider } from '@almadar/ui/renderer';
@@ -25,7 +24,7 @@ import { NavigationProvider } from '@almadar/ui/renderer';
 
 // Generated schema import (compiler fills this in)
 // {{GENERATED_SCHEMA_IMPORT}}
-const schema = { orbitals: [] }; // Placeholder - replaced by compiler
+const schema = { name: 'app', orbitals: [] }; // Placeholder - replaced by compiler
 
 const queryClient = new QueryClient({
   defaultOptions: {

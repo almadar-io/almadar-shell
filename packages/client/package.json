@@ -34,6 +34,9 @@
     "lucide-react": "^0.344.0"
   },
   "devDependencies": {
+    "@almadar/eslint-plugin": ">=2.3.0",
+    "@typescript-eslint/parser": "8.56.0",
+    "eslint": "10.0.0",
     "@testing-library/react": "^16.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/react": "^18.3.18",

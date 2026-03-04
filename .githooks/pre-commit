@@ -18,15 +18,23 @@ echo "$STAGED" | grep -q 'package\.json$' || exit 0
 [ -f pnpm-lock.yaml ] || exit 0
 
 # ── Detect monorepo parent ─────────────────────────────────────────────────
-IN_WORKSPACE=0
-CHECK_DIR=$(dirname "$(pwd)")
-while [ "$CHECK_DIR" != "/" ]; do
-  [ -f "$CHECK_DIR/pnpm-workspace.yaml" ] && { IN_WORKSPACE=1; break; }
-  CHECK_DIR=$(dirname "$CHECK_DIR")
-done
+# If this package is itself a workspace root (has pnpm-workspace.yaml), always
+# run pnpm install directly — isolation mode would lose workspace member deps.
+IS_WORKSPACE_ROOT=0
+[ -f pnpm-workspace.yaml ] && IS_WORKSPACE_ROOT=1
 
-if [ "$IN_WORKSPACE" -eq 1 ]; then
-  # Inside monorepo: use /tmp isolation so pnpm treats it as standalone
+IN_PARENT_WORKSPACE=0
+if [ "$IS_WORKSPACE_ROOT" -eq 0 ]; then
+  CHECK_DIR=$(dirname "$(pwd)")
+  while [ "$CHECK_DIR" != "/" ]; do
+    [ -f "$CHECK_DIR/pnpm-workspace.yaml" ] && { IN_PARENT_WORKSPACE=1; break; }
+    CHECK_DIR=$(dirname "$CHECK_DIR")
+  done
+fi
+
+if [ "$IN_PARENT_WORKSPACE" -eq 1 ]; then
+  # Inside a parent monorepo but not a workspace root ourselves:
+  # use /tmp isolation so pnpm treats it as standalone
   TMPDIR=$(mktemp -d)
   trap 'rm -rf "$TMPDIR"' EXIT
 
@@ -46,7 +54,7 @@ if [ "$IN_WORKSPACE" -eq 1 ]; then
     echo "Warning: pnpm install failed in isolation — lockfile may be outdated"
   fi
 else
-  # Standalone: let pnpm regenerate the lockfile properly
+  # Standalone or nested workspace root: run pnpm install directly
   pnpm install --frozen-lockfile > /dev/null 2>&1
   if [ $? -ne 0 ]; then
     echo "pnpm-lock.yaml is out of sync — running pnpm install to fix..."

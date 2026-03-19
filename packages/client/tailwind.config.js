@@ -7,6 +7,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@almadar/ui/dist/**/*.{js,mjs}",
   ],
   theme: {
     extend: {},

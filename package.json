@@ -1,7 +1,7 @@
 {
   "name": "@almadar/shell",
   "version": "2.1.6",
-  "private": true,
+  "private": false,
   "description": "Minimal full-stack shell template for Almadar applications",
   "packageManager": "pnpm@10.30.3",
   "scripts": {

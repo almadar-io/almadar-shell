@@ -33,7 +33,12 @@
     "monaco-editor": "^0.52.2",
     "leaflet": "^1.9.4",
     "react-leaflet": "^4.2.1",
-    "lucide-react": "^0.344.0"
+    "lucide-react": "^0.344.0",
+    "three": "^0.160.0",
+    "@react-three/fiber": "^9.0.0",
+    "@react-three/drei": "^9.92.0",
+    "@react-three/postprocessing": "^3.0.0",
+    "postprocessing": "^6.39.0"
   },
   "devDependencies": {
     "@almadar/eslint-plugin": ">=2.3.0",

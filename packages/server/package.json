@@ -13,7 +13,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/server": ">=2.4.0",
+    "@almadar/server": ">=2.5.0",
     "@almadar/runtime": ">=4.3.0",
     "@almadar/evaluator": ">=2.9.2",
     "@almadar/core": ">=5.5.0",

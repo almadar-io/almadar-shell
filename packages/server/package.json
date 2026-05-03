@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@almadar/server": ">=2.7.0",
-    "@almadar/runtime": ">=5.8.2",
+    "@almadar/runtime": ">=6.0.0",
     "@almadar/evaluator": ">=2.9.2",
-    "@almadar/core": ">=7.5.0",
+    "@almadar/core": ">=7.9.0",
     "@almadar/integrations": ">=2.6.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",

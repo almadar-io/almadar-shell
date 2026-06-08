@@ -26,8 +26,11 @@ jobs:
         run: pnpm build
 
       - name: Publish
+        # npm publish (NOT pnpm publish): pnpm strips `pnpm.overrides`,
+        # `packageManager`, and the `prepare` script from the tarball. This package
+        # is a scaffold template whose package.json must publish verbatim.
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-          pnpm publish --access public --no-git-checks
+          npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

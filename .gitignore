@@ -29,3 +29,4 @@ coverage/
 
 # Lock files (regenerated on install)
 package-lock.json
+.turbo/

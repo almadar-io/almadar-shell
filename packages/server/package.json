@@ -13,12 +13,12 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/core": "^10.21.0",
-    "@almadar/evaluator": "^2.24.0",
+    "@almadar/core": "^10.24.0",
+    "@almadar/evaluator": "^2.28.0",
     "@almadar/integrations": "^2.15.0",
     "@almadar/logger": "^1.7.0",
-    "@almadar/runtime": "^6.28.0",
-    "@almadar/server": "^2.18.0",
+    "@almadar/runtime": "^6.29.0",
+    "@almadar/server": "^2.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

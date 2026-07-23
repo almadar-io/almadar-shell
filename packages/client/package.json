@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@almadar/core": "^10.32.0",
-    "@almadar/evaluator": "^2.32.0",
+    "@almadar/evaluator": "^2.33.0",
     "@almadar/logger": "^1.9.0",
     "@almadar/patterns": "^2.101.0",
     "@almadar/syntax": "^1.11.0",

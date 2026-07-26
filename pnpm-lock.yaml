@@ -30,8 +30,8 @@ importers:
   packages/client:
     dependencies:
       '@almadar/core':
-        specifier: ^10.37.0
-        version: 10.37.0
+        specifier: ^10.38.0
+        version: 10.38.0
       '@almadar/evaluator':
         specifier: ^2.37.0
         version: 2.37.0
@@ -42,11 +42,11 @@ importers:
         specifier: ^2.101.0
         version: 2.101.0
       '@almadar/syntax':
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.13.0
+        version: 1.13.0
       '@almadar/ui':
-        specifier: ^5.128.0
-        version: 5.128.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(express@4.22.2)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)
+        specifier: ^5.129.0
+        version: 5.129.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)
       '@monaco-editor/react':
         specifier: ^4.7.0
         version: 4.7.0(monaco-editor@0.52.2)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -166,23 +166,23 @@ importers:
   packages/server:
     dependencies:
       '@almadar/core':
-        specifier: ^10.37.0
-        version: 10.37.0
+        specifier: ^10.38.0
+        version: 10.38.0
       '@almadar/evaluator':
         specifier: ^2.37.0
         version: 2.37.0
       '@almadar/integrations':
-        specifier: ^2.19.0
-        version: 2.19.0(@opentelemetry/api@1.9.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(ws@8.21.0)
+        specifier: ^2.20.0
+        version: 2.20.0(@opentelemetry/api@1.9.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(ws@8.21.0)
       '@almadar/logger':
         specifier: ^1.10.0
         version: 1.10.0
       '@almadar/runtime':
-        specifier: ^6.40.0
-        version: 6.40.0(express@4.22.2)
+        specifier: ^6.41.0
+        version: 6.41.0(express@4.22.2)
       '@almadar/server':
-        specifier: ^2.28.0
-        version: 2.28.0(express@4.22.2)
+        specifier: ^2.29.0
+        version: 2.29.0(express@4.22.2)
       cors:
         specifier: ^2.8.5
         version: 2.8.6
@@ -239,8 +239,8 @@ importers:
   packages/shared:
     dependencies:
       '@almadar/core':
-        specifier: ^10.37.0
-        version: 10.37.0
+        specifier: ^10.38.0
+        version: 10.38.0
       zod:
         specifier: ^3.22.0
         version: 3.25.76
@@ -254,8 +254,8 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
-  '@almadar/core@10.37.0':
-    resolution: {integrity: sha512-r1fe8I9osHToKu+q/C5fNPXkYDSRTpJLVvP0Bp7VEb2qsCk0vW2UqQw3w63TPEzUA8G/eNolwSA9brj9LDiI4Q==}
+  '@almadar/core@10.38.0':
+    resolution: {integrity: sha512-Eumm2417cgDmNzv2AwD78w7Aioc5Cdca+FxlDTJd8op7CQkYajSMxIUvef6w0eJXG32gs3Sj4B6LpkUnVPEhoA==}
 
   '@almadar/eslint-plugin@2.15.0':
     resolution: {integrity: sha512-8mQTnuU7eHOSpCgAag5VEywVce9iWFNC2j6cKvrwjOH/cbak+6Akgnp/zjK3bvy6xoVp6k/4H6bIh/WkRhbfSg==}
@@ -265,8 +265,8 @@ packages:
   '@almadar/evaluator@2.37.0':
     resolution: {integrity: sha512-dJRgYR4XDrnqYJtMvVk/D6Awl+N741HsE39XE4+rPd1zJhEW2KTFoc3NUC1ErxSJ0alnYzkUYRMMwDhkfPgTPg==}
 
-  '@almadar/integrations@2.19.0':
-    resolution: {integrity: sha512-v/ts/cTX9D5dUCK+NLi6iQcek2R9ZAoGPd54SRjb9hVYs1y0mPwEn8WyyyF5DeCt13sKcGDl7R8sVRDXjJ/YGQ==}
+  '@almadar/integrations@2.20.0':
+    resolution: {integrity: sha512-S7+fAtqCuJ1191Xf5KsLtzWDMF/S3EWW/ZIyD3FawZ8vx7108OLcBA6B/nK+NmFlwzCmJiW0uJXqt5tSWTz1SQ==}
 
   '@almadar/llm@2.37.0':
     resolution: {integrity: sha512-MMpUwVR+A+feixg5CDq2up6+7UVkZ/NCB6PvpZOroYgSzwiZTcbFBrVPv/oktpofLXUTQ3lFbglB71RFx9tbKQ==}
@@ -279,24 +279,16 @@ packages:
   '@almadar/patterns@2.101.0':
     resolution: {integrity: sha512-bT0fui3pkxlNkK/E+JLT6xGt3XFYt80Swkzsp6afHRiU06TCXwHA4yX5ePY+AG+LSlVEpOwVQl5VJCQQPch8jg==}
 
-  '@almadar/runtime@6.39.0':
-    resolution: {integrity: sha512-pJIhf+CrExz1H6xogexjh82mPtcV8iNmZzG96uh1oKpZOSR7c4W1oXGXmgGPvx7VhWNRvae9rgNJaWXgL2HPRA==}
+  '@almadar/runtime@6.41.0':
+    resolution: {integrity: sha512-s5Hcq2dIA7+PaNUotOrHUxw43JjEtmc48RdA69n7EwMLT5xj6f40UnC+XxKzpGVC6DT2qEB3wskWmvyy2JDHsg==}
     peerDependencies:
       express: ^5.0.0
     peerDependenciesMeta:
       express:
         optional: true
 
-  '@almadar/runtime@6.40.0':
-    resolution: {integrity: sha512-wi+Zbua47nUDtYBeGpEClSxF0DPvxSTn+l4GezV9kQpvEzroD30pScdMuPSLYnb6zmTckysGqueVAO3m6ZSHFA==}
-    peerDependencies:
-      express: ^5.0.0
-    peerDependenciesMeta:
-      express:
-        optional: true
-
-  '@almadar/server@2.28.0':
-    resolution: {integrity: sha512-JYjWXb/OJ28LlUaSwm0CSB5SIRbmX9DJKvS9y2O9ibZjonh0tERmzEGik2L9I2giIBOM+fdDfe0WT3+yR4/H7Q==}
+  '@almadar/server@2.29.0':
+    resolution: {integrity: sha512-/lP4UDyohvIOMIqthn7fYvUkx2x6dx1f4s878wFaDWZ9h6QZdTxz8O/uuCYy9tNcsvAuC+YS08sw8KUL7HQpwg==}
     peerDependencies:
       '@almadar-io/rabit': ^0.64.36
       express: ^5.0.0
@@ -304,17 +296,17 @@ packages:
       '@almadar-io/rabit':
         optional: true
 
-  '@almadar/std@16.145.0':
-    resolution: {integrity: sha512-elw8IsvEmUtxTFWqvfKhPDT59f4ipt0HKM93naIP1f9arxel9Wjuqfj6rCY32KP5wVX268kNh2ZCvtdFYlF5qg==}
-
   '@almadar/std@16.146.0':
     resolution: {integrity: sha512-A8ViZcIthd3hkSjGmbBTXUT2Cc+MmuECjcFxcyhN1TksUoo4i+aPpYG5aFRLBo9FaCTHXw6UNXlZI47/ijqxLg==}
 
-  '@almadar/syntax@1.12.0':
-    resolution: {integrity: sha512-py6wT22OWWbSgOZQxCAZn09lL81LXKDiegeipHYRZeeYZzTMNEV2Vhk4SbzLWQ/3nfSNm+2ZJ+rb0US1hgbrnw==}
+  '@almadar/std@16.147.0':
+    resolution: {integrity: sha512-nBIXovvVh2BMgNe/1EHasqzbK/a2zMKCjAiiyc9Z+OpZ3mKVaFEOOphFCoEXjjoRbVN0XOybVS8AJLz+vpBLVg==}
 
-  '@almadar/ui@5.128.0':
-    resolution: {integrity: sha512-H0K+T+bOn2plk26LSq2+J3pACFj4X001UWDPPjnJF1Dg195nOqpOQly5YYpOfWDlzPyPsXbJ58GwMNcyGZ1OTA==}
+  '@almadar/syntax@1.13.0':
+    resolution: {integrity: sha512-Y5EJotscEmWesnuFqTE1BwD9A3QP17VEMxOM+hs39HW5PP/Ke7ltuv6O3BD94B2Vjdm6BdByqf8JVbpipIYLRQ==}
+
+  '@almadar/ui@5.129.0':
+    resolution: {integrity: sha512-uaOMAJOpyoT+lAohlwA8de44ARaU8p9l5P22K8uXNuqy2XpqmWRvVRyzXQ8C8KVpauESvxfPkE8hPoncAA73OQ==}
     peerDependencies:
       '@react-three/drei': ^10.7.7
       '@react-three/fiber': ^9.0.0
@@ -3470,6 +3462,40 @@ packages:
   peberminta@0.9.0:
     resolution: {integrity: sha512-XIxfHpEuSJbITd1H3EeQwpcZbTLHc+VVr8ANI9t5sit565tsI4/xK3KWTUFE2e6QiangUkh3B0jihzmGnNrRsQ==}
 
+  pg-cloudflare@1.4.0:
+    resolution: {integrity: sha512-Vo7z/6rrQYxpNRylp4Tlob2elzbh+N/MOQbxFVWCxS7oEx6jF53GTJFxK2WWpKuBRkmiin4Mt+xofFDjx09R0A==}
+
+  pg-connection-string@2.14.0:
+    resolution: {integrity: sha512-XwWDGcLRGCXAR8F/AM5bG7Q+A3Wm2s6QeEjlOKZLlH3UYcguiqCWKyWXVag5TLTIjR7oOJUY8kcADaZgWPyLeg==}
+
+  pg-int8@1.0.1:
+    resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
+    engines: {node: '>=4.0.0'}
+
+  pg-pool@3.14.0:
+    resolution: {integrity: sha512-gKtPkFdQPU3DksooVLi9LsjZxrsBUZIpa+7aVx+LV5pNh0KzP4Zleud2po+ConrxbuXGBJ6Hfer6hdgpIBpBaw==}
+    peerDependencies:
+      pg: '>=8.0'
+
+  pg-protocol@1.15.0:
+    resolution: {integrity: sha512-cq9sECI5s0+uPUXjbz8ioyPJni6RzsRib0US67i5IoTZKw8fNeYlVE7u8F4dG7vEJJtc5wdD1K189lCCUwqWTQ==}
+
+  pg-types@2.2.0:
+    resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
+    engines: {node: '>=4'}
+
+  pg@8.22.0:
+    resolution: {integrity: sha512-8wih1vVIBMxoUM2oB4soJsD9tDnDpLv4OXBJ+EJzFsvycD+lfyIreC2gGHq78f8jbLLt+bvlPTFdFZfJkOuzAA==}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      pg-native: '>=3.0.1'
+    peerDependenciesMeta:
+      pg-native:
+        optional: true
+
+  pgpass@1.0.5:
+    resolution: {integrity: sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==}
+
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -3535,6 +3561,22 @@ packages:
   postcss@8.5.16:
     resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
     engines: {node: ^10 || ^12 || >=14}
+
+  postgres-array@2.0.0:
+    resolution: {integrity: sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==}
+    engines: {node: '>=4'}
+
+  postgres-bytea@1.0.1:
+    resolution: {integrity: sha512-5+5HqXnsZPE65IJZSMkZtURARZelel2oXUEO8rH83VS/hxH5vv1uHquPg5wZs8yMAfdv971IU+kcPUczi7NVBQ==}
+    engines: {node: '>=0.10.0'}
+
+  postgres-date@1.0.7:
+    resolution: {integrity: sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==}
+    engines: {node: '>=0.10.0'}
+
+  postgres-interval@1.2.0:
+    resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
+    engines: {node: '>=0.10.0'}
 
   postprocessing@6.39.2:
     resolution: {integrity: sha512-AxPY+xFyVOsz+8bbHSyQBoOK4AUqSQspTXXIsNcKhmGJRm/afHRAwZ8bKC02AeSPII0PW6lbCN84SgAoWFsKKA==}
@@ -3883,6 +3925,10 @@ packages:
 
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
+
+  split2@4.2.0:
+    resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
+    engines: {node: '>= 10.x'}
 
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
@@ -4423,6 +4469,10 @@ packages:
   xmlchars@2.2.0:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
 
+  xtend@4.0.2:
+    resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
+    engines: {node: '>=0.4'}
+
   y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
@@ -4490,7 +4540,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@almadar/core@10.37.0':
+  '@almadar/core@10.38.0':
     dependencies:
       zod: 3.25.76
 
@@ -4501,17 +4551,18 @@ snapshots:
 
   '@almadar/evaluator@2.37.0':
     dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
       '@almadar/std': 16.146.0
 
-  '@almadar/integrations@2.19.0(@opentelemetry/api@1.9.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(ws@8.21.0)':
+  '@almadar/integrations@2.20.0(@opentelemetry/api@1.9.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(ws@8.21.0)':
     dependencies:
-      '@almadar/core': 10.37.0
-      '@almadar/llm': 2.37.0(@almadar/core@10.37.0)(@opentelemetry/api@1.9.1)(ws@8.21.0)
+      '@almadar/core': 10.38.0
+      '@almadar/llm': 2.37.0(@almadar/core@10.38.0)(@opentelemetry/api@1.9.1)(ws@8.21.0)
       '@almadar/logger': 1.10.0
       '@sendgrid/mail': 8.1.6
       dotenv: 16.6.1
       googleapis: 144.0.0
+      pg: 8.22.0
       resend: 4.8.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       stripe: 17.7.0
       twilio: 5.13.1
@@ -4525,14 +4576,15 @@ snapshots:
       - '@smithy/signature-v4'
       - debug
       - encoding
+      - pg-native
       - react
       - react-dom
       - supports-color
       - ws
 
-  '@almadar/llm@2.37.0(@almadar/core@10.37.0)(@opentelemetry/api@1.9.1)(ws@8.21.0)':
+  '@almadar/llm@2.37.0(@almadar/core@10.38.0)(@opentelemetry/api@1.9.1)(ws@8.21.0)':
     dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
       '@almadar/logger': 1.10.0
       '@anthropic-ai/sdk': 0.52.0
       '@langchain/anthropic': 1.5.1(@langchain/core@1.2.2(@opentelemetry/api@1.9.1)(openai@6.45.0(ws@8.21.0)(zod@3.25.76))(ws@8.21.0))
@@ -4552,19 +4604,19 @@ snapshots:
 
   '@almadar/logger@1.10.0':
     dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
 
   '@almadar/patterns@2.101.0':
     dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
 
-  '@almadar/runtime@6.39.0(express@4.22.2)':
+  '@almadar/runtime@6.41.0(express@4.22.2)':
     dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
       '@almadar/evaluator': 2.37.0
       '@almadar/logger': 1.10.0
-      '@almadar/server': 2.28.0(express@4.22.2)
-      '@almadar/std': 16.146.0
+      '@almadar/server': 2.29.0(express@4.22.2)
+      '@almadar/std': 16.147.0
     optionalDependencies:
       express: 4.22.2
     transitivePeerDependencies:
@@ -4574,25 +4626,9 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@almadar/runtime@6.40.0(express@4.22.2)':
+  '@almadar/server@2.29.0(express@4.22.2)':
     dependencies:
-      '@almadar/core': 10.37.0
-      '@almadar/evaluator': 2.37.0
-      '@almadar/logger': 1.10.0
-      '@almadar/server': 2.28.0(express@4.22.2)
-      '@almadar/std': 16.146.0
-    optionalDependencies:
-      express: 4.22.2
-    transitivePeerDependencies:
-      - '@almadar-io/rabit'
-      - bufferutil
-      - encoding
-      - supports-color
-      - utf-8-validate
-
-  '@almadar/server@2.28.0(express@4.22.2)':
-    dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
       '@almadar/logger': 1.10.0
       '@faker-js/faker': 9.9.0
       cors: 2.8.6
@@ -4608,27 +4644,27 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@almadar/std@16.145.0':
-    dependencies:
-      '@almadar/core': 10.37.0
-
   '@almadar/std@16.146.0':
     dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
 
-  '@almadar/syntax@1.12.0':
+  '@almadar/std@16.147.0':
     dependencies:
-      '@almadar/core': 10.37.0
-      '@almadar/std': 16.145.0
+      '@almadar/core': 10.38.0
 
-  '@almadar/ui@5.128.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(express@4.22.2)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)':
+  '@almadar/syntax@1.13.0':
     dependencies:
-      '@almadar/core': 10.37.0
+      '@almadar/core': 10.38.0
+      '@almadar/std': 16.147.0
+
+  '@almadar/ui@5.129.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)':
+    dependencies:
+      '@almadar/core': 10.38.0
       '@almadar/evaluator': 2.37.0
       '@almadar/logger': 1.10.0
-      '@almadar/runtime': 6.39.0(express@4.22.2)
-      '@almadar/std': 16.146.0
-      '@almadar/syntax': 1.12.0
+      '@almadar/runtime': 6.41.0(express@4.22.2)
+      '@almadar/std': 16.147.0
+      '@almadar/syntax': 1.13.0
       '@dnd-kit/core': 6.3.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@dnd-kit/sortable': 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)
       '@dnd-kit/utilities': 3.2.2(react@19.2.7)
@@ -8423,6 +8459,41 @@ snapshots:
 
   peberminta@0.9.0: {}
 
+  pg-cloudflare@1.4.0:
+    optional: true
+
+  pg-connection-string@2.14.0: {}
+
+  pg-int8@1.0.1: {}
+
+  pg-pool@3.14.0(pg@8.22.0):
+    dependencies:
+      pg: 8.22.0
+
+  pg-protocol@1.15.0: {}
+
+  pg-types@2.2.0:
+    dependencies:
+      pg-int8: 1.0.1
+      postgres-array: 2.0.0
+      postgres-bytea: 1.0.1
+      postgres-date: 1.0.7
+      postgres-interval: 1.2.0
+
+  pg@8.22.0:
+    dependencies:
+      pg-connection-string: 2.14.0
+      pg-pool: 3.14.0(pg@8.22.0)
+      pg-protocol: 1.15.0
+      pg-types: 2.2.0
+      pgpass: 1.0.5
+    optionalDependencies:
+      pg-cloudflare: 1.4.0
+
+  pgpass@1.0.5:
+    dependencies:
+      split2: 4.2.0
+
   picocolors@1.1.1: {}
 
   picomatch@2.3.2: {}
@@ -8470,6 +8541,16 @@ snapshots:
       nanoid: 3.3.15
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  postgres-array@2.0.0: {}
+
+  postgres-bytea@1.0.1: {}
+
+  postgres-date@1.0.7: {}
+
+  postgres-interval@1.2.0:
+    dependencies:
+      xtend: 4.0.2
 
   postprocessing@6.39.2(three@0.160.1):
     dependencies:
@@ -8918,6 +8999,8 @@ snapshots:
   source-map-js@1.2.1: {}
 
   space-separated-tokens@2.0.2: {}
+
+  split2@4.2.0: {}
 
   stackback@0.0.2: {}
 
@@ -9531,6 +9614,8 @@ snapshots:
   xmlbuilder@13.0.2: {}
 
   xmlchars@2.2.0: {}
+
+  xtend@4.0.2: {}
 
   y18n@5.0.8: {}
 

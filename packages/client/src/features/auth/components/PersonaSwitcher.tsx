@@ -10,16 +10,22 @@
 import React from 'react';
 import { HStack, Select, Typography } from '@almadar/ui';
 import { isAuthEnabled } from '../../../config/firebase';
-import { listMockAccounts } from '../../../config/mockAuth';
+import { listMockAccounts, onMockRosterChanged } from '../../../config/mockAuth';
 import { authService } from '../authService';
 import { useAuthContext } from '../AuthContext';
 
 export function PersonaSwitcher(): React.ReactElement | null {
   const { user } = useAuthContext();
+  // The roster arrives over HTTP after first paint. Without this the picker
+  // renders its empty pre-fetch state and never updates, because the signed-out
+  // viewer never changes and so the auth listener never fires.
+  const [accounts, setAccounts] = React.useState(() => listMockAccounts());
+
+  React.useEffect(() => onMockRosterChanged(() => setAccounts(listMockAccounts())), []);
 
   if (isAuthEnabled()) return null;
 
-  const options = listMockAccounts().map((p) => ({
+  const options = accounts.map((p) => ({
     value: p.id,
     label: `${String(p.name ?? p.id)} — ${String(p.role ?? 'no role')}`,
   }));

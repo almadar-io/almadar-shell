@@ -10,10 +10,11 @@
  */
 
 import {
-  MOCK_PERSONAS,
+  DEFAULT_VIEWER,
   encodeDevIdentityToken,
-  findMockPersona,
+  findPersonaInRoster,
   isFieldValue,
+  type FieldValue,
   type UserContext,
 } from '@almadar/core';
 
@@ -34,9 +35,15 @@ const REGISTERED_KEY = 'almadar.mockAuth.registered';
 /** The role a brand-new or unknown account gets — never `admin`. */
 const DEFAULT_ROLE = 'member';
 
+/** Empty in dev (the Vite proxy forwards /api); the full server URL in prod. */
+const API_BASE: string =
+  typeof import.meta.env.VITE_API_URL === 'string' ? import.meta.env.VITE_API_URL : '';
+
 const listeners = new Set<Listener>();
+const rosterListeners = new Set<() => void>();
 let current: MockUser | null = null;
 let registered: UserContext[] = [];
+let roster: UserContext[] = [];
 
 function toMockUser(p: UserContext): MockUser {
   return {
@@ -52,9 +59,11 @@ function toMockUser(p: UserContext): MockUser {
 }
 
 /** A stored account, validated field by field — never trust localStorage shape. */
-function readPersona(raw: unknown): UserContext | null {
-  if (typeof raw !== 'object' || raw === null || Array.isArray(raw)) return null;
-  const record: Record<string, unknown> = { ...raw };
+function readPersona(raw: FieldValue | undefined): UserContext | null {
+  if (typeof raw !== 'object' || raw === null || Array.isArray(raw) || raw instanceof Date) {
+    return null;
+  }
+  const record: { [key: string]: FieldValue | undefined } = { ...raw };
   const id = record['id'];
   if (typeof id !== 'string' || id.length === 0) return null;
   const persona: UserContext = { id };
@@ -69,7 +78,7 @@ function readRegistered(): UserContext[] {
   try {
     const raw = localStorage.getItem(REGISTERED_KEY);
     if (!raw) return [];
-    const parsed: unknown = JSON.parse(raw);
+    const parsed: FieldValue = JSON.parse(raw);
     if (!Array.isArray(parsed)) return [];
     return parsed.map(readPersona).filter((p): p is UserContext => p !== null);
   } catch {
@@ -86,8 +95,34 @@ function writeRegistered(list: UserContext[]): void {
   }
 }
 
+/**
+ * The app's personas, fetched from its own server.
+ *
+ * They are the LIVE seeded rows of the app's `[identity]` entity, not a
+ * hardcoded list and not a re-derivation: `@user.id` is what ownership scoping
+ * compares against, so a persona whose id is not literally one of those rows
+ * owns nothing and every "only mine" list renders empty — indistinguishable
+ * from a working filter over no data.
+ *
+ * An app that declares no `[identity]` entity has no roster to serve, so the
+ * shell's own default viewer stands in and sign-in still works.
+ */
+async function loadRoster(): Promise<void> {
+  try {
+    const response = await fetch(`${API_BASE}/api/personas`);
+    if (response.ok) {
+      const data = (await response.json()) as { personas?: UserContext[] };
+      roster = Array.isArray(data.personas) ? data.personas : [];
+    }
+  } catch {
+    /* server unreachable — fall through to the default viewer */
+  }
+  if (roster.length === 0) roster = [DEFAULT_VIEWER];
+  for (const fn of rosterListeners) fn();
+}
+
 function allAccounts(): UserContext[] {
-  return [...MOCK_PERSONAS, ...registered];
+  return [...roster, ...registered];
 }
 
 function emit(): void {
@@ -103,19 +138,31 @@ function persist(user: MockUser | null): void {
   }
 }
 
-/** Restore a persisted session. Safe to call more than once. */
-export function initMockAuth(): void {
+/**
+ * Load the app's roster, then restore a persisted session. Safe to call more
+ * than once.
+ *
+ * The roster is awaited first because a restored session names a persona by id:
+ * resolved before the rows arrive, every stored session would silently fail to
+ * restore and the app would open signed out.
+ */
+export async function initMockAuth(): Promise<void> {
   registered = readRegistered();
+  await loadRoster();
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return;
-    const parsed: unknown = JSON.parse(raw);
-    if (typeof parsed !== 'object' || parsed === null) return;
-    const session: Record<string, unknown> = { ...parsed };
+    const parsed: FieldValue = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return;
+    if (parsed instanceof Date) return;
+    const session: { [key: string]: FieldValue | undefined } = { ...parsed };
     const uid = session['uid'];
     if (typeof uid !== 'string') return;
     const found = allAccounts().find((a) => a.id === uid);
-    if (found) current = toMockUser(found);
+    if (found) {
+      current = toMockUser(found);
+      emit();
+    }
   } catch {
     /* ignore a corrupt session */
   }
@@ -124,6 +171,18 @@ export function initMockAuth(): void {
 /** Every persona that can be signed into — for the dev persona picker. */
 export function listMockAccounts(): readonly UserContext[] {
   return allAccounts();
+}
+
+/**
+ * Subscribe to roster arrival. The roster loads over HTTP after first paint, so
+ * the persona picker renders empty and must be told when the rows land — the
+ * auth listener cannot carry it, since the signed-out viewer does not change.
+ */
+export function onMockRosterChanged(fn: () => void): () => void {
+  rosterListeners.add(fn);
+  return () => {
+    rosterListeners.delete(fn);
+  };
 }
 
 function newAccount(email: string, displayName?: string): UserContext {
@@ -177,7 +236,7 @@ export const mockAuth = {
   /** Sign in directly as a named persona — the dev persona switch. */
   signInAsPersona(idOrRole: string): Promise<MockUser> {
     const account =
-      findMockPersona(idOrRole) ??
+      findPersonaInRoster(roster, idOrRole) ??
       registered.find((a) => a.id === idOrRole || a.role === idOrRole);
     if (!account) {
       return Promise.reject(

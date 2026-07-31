@@ -30,11 +30,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // No Firebase config — subscribe to the persona-backed mock instead of
       // rendering signed-out forever, so the app can be viewed as each persona.
       if (!auth) {
-        initMockAuth();
+        // Subscribe first: the listener fires immediately with the current
+        // (signed-out) state so the app paints, then again once the roster has
+        // arrived and a persisted session is restored.
         unsubscribe = mockAuth.onAuthStateChanged((mockUser) => {
           setUser(mockUser);
           setLoading(false);
         });
+        void initMockAuth();
         return;
       }
       unsubscribe = auth.onAuthStateChanged((firebaseUser) => {

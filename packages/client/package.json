@@ -13,12 +13,12 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/core": "^10.47.0",
+    "@almadar/core": "^10.48.0",
     "@almadar/evaluator": "^2.38.0",
     "@almadar/logger": "^1.10.0",
     "@almadar/patterns": "^2.101.0",
     "@almadar/syntax": "^1.13.0",
-    "@almadar/ui": "^5.141.0",
+    "@almadar/ui": "^5.142.0",
     "@monaco-editor/react": "^4.7.0",
     "@react-three/drei": "^9.92.0",
     "@react-three/fiber": "^9.0.0",

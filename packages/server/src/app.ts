@@ -13,7 +13,14 @@ import {
   notFoundHandler,
   debugEventsRouter,
   personasRouter,
+  pushRouter,
+  pushServiceWorkerHandler,
+  PUSH_SERVICE_WORKER_PATH,
+  reportsRouter,
+  createHooksRouter,
 } from '@almadar/server';
+import { googleCalendarHookProvider } from '@almadar/integrations';
+import { broadcastBusEvent } from './sse.js';
 import { registerRoutes } from './routes.js';
 
 export const app: Express = express();
@@ -39,6 +46,35 @@ app.get('/health', (_req, res) => {
 // Debug event bus endpoints (dev-only, no-op in production)
 app.use('/api/debug', debugEventsRouter());
 
+// Web Push surface (browser/push-subscribe): public VAPID key + the shared
+// service worker (root-scoped — a SW's max scope is its own directory).
+app.use('/api/push', pushRouter);
+app.get(PUSH_SERVICE_WORKER_PATH, pushServiceWorkerHandler);
+
+// Inbound webhook ingress (I-19 decision): mounted BEFORE the authenticated
+// /api routes — hook senders (Google Calendar watch channels, e-sign status,
+// banking callbacks) cannot present a Firebase token, so each provider
+// VERIFIES its own signature/channel token and unverified requests get 400.
+// Dispatch = SSE bus broadcast to every connected client, so client circuits'
+// `listens` fire; the cron pull cycle stays the no-client backstop.
+app.use(
+  '/api/hooks',
+  createHooksRouter({
+    providers: {
+      'google-calendar': googleCalendarHookProvider(process.env.GOOGLE_CALENDAR_CHANNEL_TOKEN),
+    },
+    dispatch: (event, payload) => {
+      broadcastBusEvent(undefined, {
+        type: 'bus',
+        event,
+        payload,
+        source: { orbital: 'webhook', trait: 'ingress' },
+        timestamp: Date.now(),
+      });
+    },
+  }),
+);
+
 // Dev persona roster (no-op unless ALLOW_DEV_AUTH_BYPASS). Mounted BEFORE
 // registerRoutes, which applies authenticateFirebase to /api — a pre-login
 // persona picker cannot present a token it does not have yet.
@@ -46,6 +82,10 @@ app.use('/api', personasRouter());
 
 // Register generated routes
 registerRoutes(app);
+
+// Server-side report export (Excel/PDF/CSV). Mounted AFTER registerRoutes so
+// the /api auth middleware it registers covers this route too.
+app.use('/api/reports', reportsRouter);
 
 // Error handling
 app.use(notFoundHandler);

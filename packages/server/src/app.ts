@@ -19,7 +19,7 @@ import {
   reportsRouter,
   createHooksRouter,
 } from '@almadar/server';
-import { googleCalendarHookProvider } from '@almadar/integrations';
+import { hookProviders } from './hooks-providers.js';
 import { broadcastBusEvent } from './sse.js';
 import { registerRoutes } from './routes.js';
 
@@ -55,14 +55,13 @@ app.get(PUSH_SERVICE_WORKER_PATH, pushServiceWorkerHandler);
 // /api routes — hook senders (Google Calendar watch channels, e-sign status,
 // banking callbacks) cannot present a Firebase token, so each provider
 // VERIFIES its own signature/channel token and unverified requests get 400.
-// Dispatch = SSE bus broadcast to every connected client, so client circuits'
-// `listens` fire; the cron pull cycle stays the no-client backstop.
+// Providers are DERIVED from this app's invoked services (generated
+// hooks-providers.ts, I-26). Dispatch = SSE bus broadcast to every connected
+// client, so client circuits' `listens` fire; cron pull stays the backstop.
 app.use(
   '/api/hooks',
   createHooksRouter({
-    providers: {
-      'google-calendar': googleCalendarHookProvider(process.env.GOOGLE_CALENDAR_CHANNEL_TOKEN),
-    },
+    providers: hookProviders(),
     dispatch: (event, payload) => {
       broadcastBusEvent(undefined, {
         type: 'bus',

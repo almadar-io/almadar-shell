@@ -30,11 +30,11 @@ importers:
   packages/client:
     dependencies:
       '@almadar/core':
-        specifier: ^10.68.0
-        version: 10.68.0
+        specifier: ^10.69.0
+        version: 10.69.0
       '@almadar/evaluator':
-        specifier: ^2.41.0
-        version: 2.41.0
+        specifier: ^2.42.0
+        version: 2.42.0
       '@almadar/logger':
         specifier: ^1.11.0
         version: 1.11.0
@@ -45,8 +45,8 @@ importers:
         specifier: ^1.15.0
         version: 1.15.0
       '@almadar/ui':
-        specifier: ^5.158.0
-        version: 5.158.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)
+        specifier: ^5.159.0
+        version: 5.159.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)
       '@monaco-editor/react':
         specifier: ^4.7.0
         version: 4.7.0(monaco-editor@0.52.2)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -166,11 +166,11 @@ importers:
   packages/server:
     dependencies:
       '@almadar/core':
-        specifier: ^10.68.0
-        version: 10.68.0
+        specifier: ^10.69.0
+        version: 10.69.0
       '@almadar/evaluator':
-        specifier: ^2.41.0
-        version: 2.41.0
+        specifier: ^2.42.0
+        version: 2.42.0
       '@almadar/integrations':
         specifier: ^2.27.0
         version: 2.27.0(@aws-sdk/credential-provider-node@3.972.81)(@opentelemetry/api@1.9.1)(@smithy/signature-v4@5.7.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(ws@8.21.0)
@@ -178,11 +178,11 @@ importers:
         specifier: ^1.11.0
         version: 1.11.0
       '@almadar/runtime':
-        specifier: ^6.59.0
-        version: 6.59.0(express@4.22.2)
+        specifier: ^6.60.0
+        version: 6.60.0(express@4.22.2)
       '@almadar/server':
-        specifier: ^2.37.0
-        version: 2.37.0(express@4.22.2)
+        specifier: ^2.38.0
+        version: 2.38.0(express@4.22.2)
       cors:
         specifier: ^2.8.5
         version: 2.8.6
@@ -239,8 +239,8 @@ importers:
   packages/shared:
     dependencies:
       '@almadar/core':
-        specifier: ^10.68.0
-        version: 10.68.0
+        specifier: ^10.69.0
+        version: 10.69.0
       zod:
         specifier: ^3.22.0
         version: 3.25.76
@@ -254,16 +254,16 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
-  '@almadar/core@10.68.0':
-    resolution: {integrity: sha512-RL7RGgaTMtGmeUzM9Jc2XVkwMrjYRAvW/Ar+RAsSwsfU8Pt/a2hubOk5pYygAJYr6VFhhxaE+RLaIOinc9vIdw==}
+  '@almadar/core@10.69.0':
+    resolution: {integrity: sha512-bzl29h0GJRnuh0lL1rwHt/JbOifDz5jCg+nqISidF1lM7fGRf+6BkOCGIK3aE/kLqBqVyykPa6M90epfDQJk+Q==}
 
   '@almadar/eslint-plugin@2.15.0':
     resolution: {integrity: sha512-8mQTnuU7eHOSpCgAag5VEywVce9iWFNC2j6cKvrwjOH/cbak+6Akgnp/zjK3bvy6xoVp6k/4H6bIh/WkRhbfSg==}
     peerDependencies:
       eslint: '>=8.0.0'
 
-  '@almadar/evaluator@2.41.0':
-    resolution: {integrity: sha512-DN5r0LyrGGIBXo86FvU/vHXwEZZKDD39ZpXVQgNyNslIsjBpKgiQQft4SjQFYz7p0Pt/UM4BNkETe+z1nZR/GA==}
+  '@almadar/evaluator@2.42.0':
+    resolution: {integrity: sha512-OXx4oiwlc5SxlnOg+uQxtdj6OCw9OQWi39NBj3LjNkCgmdab4osNyPc1OJZMZMgZG7LNc545txnbauiSbiYjDA==}
 
   '@almadar/integrations@2.27.0':
     resolution: {integrity: sha512-5K8pYbyMl0R8NPc7Wd82tqIgGqCDdAFJAKMrUbU/ooriPKTHcqmRhx81FizYH2tX8Vk6gSwEnjiGo9UWTRolSw==}
@@ -279,16 +279,16 @@ packages:
   '@almadar/patterns@2.101.0':
     resolution: {integrity: sha512-bT0fui3pkxlNkK/E+JLT6xGt3XFYt80Swkzsp6afHRiU06TCXwHA4yX5ePY+AG+LSlVEpOwVQl5VJCQQPch8jg==}
 
-  '@almadar/runtime@6.59.0':
-    resolution: {integrity: sha512-+9u6uZFNUAb3lJ/gXwxmKffaeItaQJa/1imst1XWEyR0by6R1HhqpUbCO1Wz5uoF8OF9e3A5m9YXp//b1ggv5Q==}
+  '@almadar/runtime@6.60.0':
+    resolution: {integrity: sha512-7RGPSYJrsjyQgUEHzqGeco9x4oAc2r7HKGOYNxX1euH5QTbYO3XQEMx482Wuuh9yuMa472Rix0fq9dKUTXiRpQ==}
     peerDependencies:
       express: ^5.0.0
     peerDependenciesMeta:
       express:
         optional: true
 
-  '@almadar/server@2.37.0':
-    resolution: {integrity: sha512-lQUyUesEJmSn8fsHY5TpirJy3gHE5LCFkJJ0EAPbhaxqibPXxVwl2Gj5PM/Y8KYkhQh03rlG4StmJDmpgyvKtA==}
+  '@almadar/server@2.38.0':
+    resolution: {integrity: sha512-+9ixSEB9N+qEkNHlMcF0nQugBFHzeTGx9Nfd7IgsswVedoZLeIjsB8z/ZQY0Gpu83FALLM0Ei4Wmc4TrQ5bfCw==}
     peerDependencies:
       '@almadar-io/rabit': ^0.65.14
       express: ^5.0.0
@@ -299,17 +299,14 @@ packages:
   '@almadar/std@16.169.0':
     resolution: {integrity: sha512-7Z5uTj1ILJKksxEGKNWRw3Zg001Ct+b+HOGIcBVuz+A2dg/kIZnng5J8ezAM+i5+gITJxV4noQk0ue6Dg6zwwQ==}
 
-  '@almadar/std@16.172.0':
-    resolution: {integrity: sha512-ovVuLgoTMvI+IYjYdkkk4gcOvnCEwhwl6D3pNdzQkjexgMdb8BRezhujNotQbY5etonwsuh65iJZQpMjxIeVvg==}
-
-  '@almadar/std@16.184.0':
-    resolution: {integrity: sha512-fRtbTRf4knrONk3yR8wg+Hh/tEPzA4drLT7mcB6GMCAg88dbjsr7Z3NdluL+SMM0ViA1vjvnE+GCYQgD5zNc/A==}
+  '@almadar/std@16.185.0':
+    resolution: {integrity: sha512-2yXfgUGaB/F4qrg6FhdDFgP+gossbKMLA17CSQkyuDz7HayYODKlavNasgX6fplFMd86y3fcHNuei/gqZzRc2A==}
 
   '@almadar/syntax@1.15.0':
     resolution: {integrity: sha512-p0cDKQfNIyusRm7u4je34RxDQdpOaz3r6SJ1KR/YpqtEIOM8JVw+iikC7xegMGYtSRSU63g3bMPe0cmfvFQPnw==}
 
-  '@almadar/ui@5.158.0':
-    resolution: {integrity: sha512-PMM02fKcsVW6r3wO7TG8s1JStCl4c7I4VAa1U+psLPg5MdHamNs+BszFDT6ioCWO7g3dEkzd3JAnJWDd51T3Ew==}
+  '@almadar/ui@5.159.0':
+    resolution: {integrity: sha512-Z2VlyOJoo707Iqua+5qFSyYOsehJaU6TycRXDuc23zzvrFzptwATEZI/kIBd+py16gbumDTyzsIsOh5FXi9VYQ==}
     peerDependencies:
       '@react-three/drei': ^10.7.7
       '@react-three/fiber': ^9.0.0
@@ -5111,7 +5108,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@almadar/core@10.68.0':
+  '@almadar/core@10.69.0':
     dependencies:
       zod: 3.25.76
 
@@ -5120,15 +5117,15 @@ snapshots:
       eslint: 10.0.0(jiti@1.21.7)
       jsonc-eslint-parser: 3.1.0
 
-  '@almadar/evaluator@2.41.0':
+  '@almadar/evaluator@2.42.0':
     dependencies:
-      '@almadar/core': 10.68.0
-      '@almadar/std': 16.172.0
+      '@almadar/core': 10.69.0
+      '@almadar/std': 16.185.0
 
   '@almadar/integrations@2.27.0(@aws-sdk/credential-provider-node@3.972.81)(@opentelemetry/api@1.9.1)(@smithy/signature-v4@5.7.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(ws@8.21.0)':
     dependencies:
-      '@almadar/core': 10.68.0
-      '@almadar/llm': 2.41.0(@almadar/core@10.68.0)(@aws-sdk/credential-provider-node@3.972.81)(@opentelemetry/api@1.9.1)(@smithy/signature-v4@5.7.3)(ws@8.21.0)
+      '@almadar/core': 10.69.0
+      '@almadar/llm': 2.41.0(@almadar/core@10.69.0)(@aws-sdk/credential-provider-node@3.972.81)(@opentelemetry/api@1.9.1)(@smithy/signature-v4@5.7.3)(ws@8.21.0)
       '@almadar/logger': 1.11.0
       '@aws-sdk/client-s3': 3.1116.0
       '@aws-sdk/s3-request-presigner': 3.1116.0
@@ -5157,9 +5154,9 @@ snapshots:
       - supports-color
       - ws
 
-  '@almadar/llm@2.41.0(@almadar/core@10.68.0)(@aws-sdk/credential-provider-node@3.972.81)(@opentelemetry/api@1.9.1)(@smithy/signature-v4@5.7.3)(ws@8.21.0)':
+  '@almadar/llm@2.41.0(@almadar/core@10.69.0)(@aws-sdk/credential-provider-node@3.972.81)(@opentelemetry/api@1.9.1)(@smithy/signature-v4@5.7.3)(ws@8.21.0)':
     dependencies:
-      '@almadar/core': 10.68.0
+      '@almadar/core': 10.69.0
       '@almadar/logger': 1.11.0
       '@anthropic-ai/sdk': 0.52.0
       '@langchain/anthropic': 1.5.1(@langchain/core@1.2.2(@opentelemetry/api@1.9.1)(openai@6.45.0(@aws-sdk/credential-provider-node@3.972.81)(@smithy/signature-v4@5.7.3)(ws@8.21.0)(zod@3.25.76))(ws@8.21.0))
@@ -5179,19 +5176,19 @@ snapshots:
 
   '@almadar/logger@1.11.0':
     dependencies:
-      '@almadar/core': 10.68.0
+      '@almadar/core': 10.69.0
 
   '@almadar/patterns@2.101.0':
     dependencies:
-      '@almadar/core': 10.68.0
+      '@almadar/core': 10.69.0
 
-  '@almadar/runtime@6.59.0(express@4.22.2)':
+  '@almadar/runtime@6.60.0(express@4.22.2)':
     dependencies:
-      '@almadar/core': 10.68.0
-      '@almadar/evaluator': 2.41.0
+      '@almadar/core': 10.69.0
+      '@almadar/evaluator': 2.42.0
       '@almadar/logger': 1.11.0
-      '@almadar/server': 2.37.0(express@4.22.2)
-      '@almadar/std': 16.184.0
+      '@almadar/server': 2.38.0(express@4.22.2)
+      '@almadar/std': 16.185.0
     optionalDependencies:
       express: 4.22.2
     transitivePeerDependencies:
@@ -5201,9 +5198,9 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@almadar/server@2.37.0(express@4.22.2)':
+  '@almadar/server@2.38.0(express@4.22.2)':
     dependencies:
-      '@almadar/core': 10.68.0
+      '@almadar/core': 10.69.0
       '@almadar/logger': 1.11.0
       '@faker-js/faker': 9.9.0
       cors: 2.8.6
@@ -5223,28 +5220,24 @@ snapshots:
 
   '@almadar/std@16.169.0':
     dependencies:
-      '@almadar/core': 10.68.0
+      '@almadar/core': 10.69.0
 
-  '@almadar/std@16.172.0':
+  '@almadar/std@16.185.0':
     dependencies:
-      '@almadar/core': 10.68.0
-
-  '@almadar/std@16.184.0':
-    dependencies:
-      '@almadar/core': 10.68.0
+      '@almadar/core': 10.69.0
 
   '@almadar/syntax@1.15.0':
     dependencies:
-      '@almadar/core': 10.68.0
+      '@almadar/core': 10.69.0
       '@almadar/std': 16.169.0
 
-  '@almadar/ui@5.158.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)':
+  '@almadar/ui@5.159.0(@react-three/drei@9.122.0(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1)(use-sync-external-store@1.6.0(react@19.2.7)))(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@react-three/postprocessing@3.0.4(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.160.1))(@types/three@0.185.1)(react@19.2.7)(three@0.160.1))(@tanstack/react-query@5.101.2(react@19.2.7))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(three@0.160.1)':
     dependencies:
-      '@almadar/core': 10.68.0
-      '@almadar/evaluator': 2.41.0
+      '@almadar/core': 10.69.0
+      '@almadar/evaluator': 2.42.0
       '@almadar/logger': 1.11.0
-      '@almadar/runtime': 6.59.0(express@4.22.2)
-      '@almadar/std': 16.184.0
+      '@almadar/runtime': 6.60.0(express@4.22.2)
+      '@almadar/std': 16.185.0
       '@almadar/syntax': 1.15.0
       '@dnd-kit/core': 6.3.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@dnd-kit/sortable': 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)

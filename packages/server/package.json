@@ -13,7 +13,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/core": "^10.96.0",
+    "@almadar/core": "^10.97.0",
     "@almadar/evaluator": "^2.47.0",
     "@almadar/integrations": "^2.36.0",
     "@almadar/logger": "^1.12.0",

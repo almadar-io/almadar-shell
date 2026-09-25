@@ -13,12 +13,12 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/core": "^10.102.0",
-    "@almadar/evaluator": "^2.48.0",
-    "@almadar/logger": "^1.12.0",
+    "@almadar/core": "^10.104.0",
+    "@almadar/evaluator": "^2.50.0",
+    "@almadar/logger": "^1.13.0",
     "@almadar/patterns": "^2.101.0",
-    "@almadar/syntax": "^1.17.0",
-    "@almadar/ui": "^6.33.0",
+    "@almadar/syntax": "^1.18.0",
+    "@almadar/ui": "^6.37.0",
     "@monaco-editor/react": "^4.7.0",
     "@react-three/drei": "^9.92.0",
     "@react-three/fiber": "^9.0.0",
@@ -43,7 +43,7 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
-    "@almadar/eslint-plugin": "^2.18.0",
+    "@almadar/eslint-plugin": "^2.19.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/react": "^19.0.0",

@@ -13,12 +13,12 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/core": "^10.104.0",
-    "@almadar/evaluator": "^2.50.0",
-    "@almadar/integrations": "^2.37.0",
-    "@almadar/logger": "^1.13.0",
-    "@almadar/runtime": "^6.91.0",
-    "@almadar/server": "^2.45.0",
+    "@almadar/core": "^10.105.0",
+    "@almadar/evaluator": "^2.51.0",
+    "@almadar/integrations": "^2.38.0",
+    "@almadar/logger": "^1.14.0",
+    "@almadar/runtime": "^6.92.0",
+    "@almadar/server": "^2.46.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -28,7 +28,7 @@
     "zod": "^3.22.0"
   },
   "devDependencies": {
-    "@almadar/eslint-plugin": "^2.19.0",
+    "@almadar/eslint-plugin": "^2.20.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^20.17.19",

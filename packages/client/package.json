@@ -14,6 +14,7 @@
     "prerender": "node scripts/prerender.mjs"
   },
   "dependencies": {
+    "@almadar/auth": "^0.1.0",
     "@almadar/core": "^10.119.0",
     "@almadar/evaluator": "^2.55.0",
     "@almadar/logger": "^1.16.0",
@@ -42,6 +43,7 @@
     "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
     "three": "^0.160.0",
+    "zod": "^3.24.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

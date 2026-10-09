@@ -33,7 +33,7 @@ app.use(helmet());
 app.use(compressionMiddleware());
 // CORS: env-driven allowlist (CORS_ORIGIN) — never reflect arbitrary origins with credentials.
 app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }));
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: '16mb' }));
 app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 // Rate limiting protects deployed apps; verification walkers and local dev
 // fire hundreds of bridge events per minute and must not be throttled —

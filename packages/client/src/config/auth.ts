@@ -15,7 +15,7 @@ const FirebaseWebConfigSchema = z.object({
 });
 
 async function webConfig(): Promise<z.infer<typeof FirebaseWebConfigSchema> | null> {
-  const hosted = await fetch('/__/firebase/init.json').then((res) => (res.ok ? res.json() : null), () => null);
+  const hosted = await fetch('/__/firebase/init.json').then((res) => (res.ok ? res.json() : null)).catch(() => null);
   const parsedHosted = FirebaseWebConfigSchema.safeParse(hosted);
   if (parsedHosted.success) return parsedHosted.data;
   const fromEnv = FirebaseWebConfigSchema.safeParse({
@@ -29,7 +29,7 @@ async function webConfig(): Promise<z.infer<typeof FirebaseWebConfigSchema> | nu
 declare global {
   interface Window {
     /** Emulator dev only: lets a verifier sign this page in as a dev persona (a custom token from `/api/personas/sign-in`). */
-    __almadarAuth?: { signInWithCustomToken(customToken: string): Promise<string> };
+    __almadarAuth?: { signInWithCustomToken(customToken: string): Promise<string>; currentUid(): Promise<string | null> };
   }
 }
 
@@ -49,7 +49,10 @@ export function connectAppAuth(): Promise<BrowserAuth | null> {
       ...(emulatorHost ? { emulatorHost } : {}),
     }).then((auth) => {
       if (emulatorHost) {
-        window.__almadarAuth = { signInWithCustomToken: async (customToken) => (await auth.signInWithCustomToken(customToken)).uid };
+        window.__almadarAuth = {
+          signInWithCustomToken: async (customToken) => (await auth.signInWithCustomToken(customToken)).uid,
+          currentUid: () => auth.currentUid(),
+        };
       }
       return auth;
     });

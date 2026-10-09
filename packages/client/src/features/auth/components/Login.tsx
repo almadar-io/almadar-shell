@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../AuthContext';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { z } from 'zod';
 
 const EMAIL_FOR_SIGN_IN_KEY = 'emailForSignIn';
+
+/** The navigation state an `access: authenticated` page's gate sends here. */
+const SignInNavState = z.object({ returnTo: z.string().regex(/^\/(?!\/)/) });
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -23,16 +27,16 @@ const Login: React.FC = () => {
     clearError,
   } = useAuthContext();
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const { state: navState } = useLocation();
 
   // Redirect on successful auth
   const { user } = useAuthContext();
   useEffect(() => {
     if (user) {
-      const returnUrl = searchParams.get('returnUrl') || '/';
-      navigate(returnUrl, { replace: true });
+      const parsed = SignInNavState.safeParse(navState);
+      navigate(parsed.success ? parsed.data.returnTo : '/', { replace: true });
     }
-  }, [user, navigate, searchParams]);
+  }, [user, navigate, navState]);
 
   // Check if user is returning from email link
   useEffect(() => {

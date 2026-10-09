@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/route-documents.mjs --manifest ../../routes.json",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --max-warnings 0 src/",
     "preview": "vite preview",

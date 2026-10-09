@@ -3,7 +3,8 @@
  * Prerender a built site: serve `dist/` (unknown paths fall back to
  * index.html, like the host), visit every static route the compiler listed
  * in routes.json in a headless browser, and write each route's rendered HTML
- * to `dist/<route>/index.html`, plus sitemap.xml and robots.txt.
+ * to `dist/<route>/index.html`, plus sitemap.xml and robots.txt. `--origin`
+ * fills in an origin the manifest does not declare.
  *
  * Usage: node scripts/prerender.mjs --routes ../../routes.json --origin https://orb.almadar.io [--dist dist]
  */
@@ -13,6 +14,7 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { chromium } from 'playwright';
 import { routeFile, sitemap, robots } from './prerender-lib.mjs';
+import { APP_SHELL } from './route-documents.mjs';
 
 const { values } = parseArgs({
   options: { routes: { type: 'string' }, origin: { type: 'string' }, dist: { type: 'string', default: 'dist' } },
@@ -22,8 +24,10 @@ if (!values.routes || !values.origin) {
   process.exit(2);
 }
 const dist = path.resolve(values.dist);
-const routes = JSON.parse(fs.readFileSync(values.routes, 'utf8'));
-const shell = fs.readFileSync(path.join(dist, 'index.html'));
+const loaded = JSON.parse(fs.readFileSync(values.routes, 'utf8'));
+const manifest = { ...loaded, site: { origin: values.origin, ...(loaded.site ?? {}) } };
+const routes = manifest.routes;
+const shell = fs.readFileSync(path.join(dist, fs.existsSync(path.join(dist, APP_SHELL)) ? APP_SHELL : 'index.html'));
 const types = { '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2' };
 
 const server = http.createServer((req, res) => {
@@ -66,6 +70,6 @@ for (const [out, html] of rendered) {
   fs.mkdirSync(path.dirname(path.join(dist, out)), { recursive: true });
   fs.writeFileSync(path.join(dist, out), html);
 }
-fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap(routes, values.origin));
-fs.writeFileSync(path.join(dist, 'robots.txt'), robots(values.origin));
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap(manifest));
+fs.writeFileSync(path.join(dist, 'robots.txt'), robots(manifest));
 console.log(`prerender: ${rendered.size} route(s) written to ${dist}`);

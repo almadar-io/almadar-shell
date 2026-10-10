@@ -1,6 +1,6 @@
 /* Import Almadar theme - @import must precede @tailwind directives */
-@import '@almadar/ui/themes/_foundation.css';
-@import '@almadar/ui/themes/minimalist.css';
+/* The runtime playground's theme entry: base, every built-in preset, foundation rules. */
+@import '@almadar/ui/themes/index.css';
 
 @tailwind base;
 @tailwind components;

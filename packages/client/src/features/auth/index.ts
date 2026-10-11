@@ -8,3 +8,4 @@ export { PersonaSwitcher } from './components/PersonaSwitcher';
 
 // Types
 export type { AuthContextType, AuthViewer, LoginCredentials, SignUpCredentials } from './types';
+export { SignOutListener } from './SignOutListener';

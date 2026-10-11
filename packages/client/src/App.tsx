@@ -22,7 +22,7 @@ import {
   VerificationProvider,
 } from '@almadar/ui/providers';
 import { normalizeUserContext } from '@almadar/core';
-import { AuthProvider, useAuthContext } from './features/auth';
+import { AuthProvider, SignOutListener, useAuthContext } from './features/auth';
 import { PersonaSwitcher } from './features/auth/components/PersonaSwitcher';
 import { NavigationProvider } from '@almadar/ui/renderer';
 import { I18nProvider, createTranslate } from '@almadar/ui/hooks';
@@ -69,6 +69,7 @@ function App() {
        <AuthProvider>
         <ViewerProvider>
         <EventBusProvider>
+          <SignOutListener />
           <VerificationProvider>
             <UISlotProvider>
               <NavigationProvider

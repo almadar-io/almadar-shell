@@ -1,6 +1,6 @@
 {
   "name": "@almadar/shell",
-  "version": "2.145.0",
+  "version": "2.146.0",
   "private": false,
   "description": "Minimal full-stack shell template for Almadar applications",
   "packageManager": "pnpm@10.30.3",
@@ -14,7 +14,8 @@
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "turbo": "^2.8.17"
+    "turbo": "^2.8.17",
+    "typescript": "^5.7.3"
   },
   "pnpm": {
     "overrides": {
